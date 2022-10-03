@@ -1,0 +1,2374 @@
+
+<!DOCTYPE html>
+
+<html lang="tr">
+
+
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta http-equiv="content-language" content="tr">
+
+    <title>iade süreci</title>
+
+
+    <!-- Latest compiled and minified CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--
+
+        <link href="lib/bootstrap.min.css" rel="stylesheet">
+
+    -->
+
+    <link href="lib/fontawesome-all.min.css" rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/7059aa82dd.js" crossorigin="anonymous"></script>
+
+    <!-- for DATE PICKER -->
+
+    <link href="lib/bootstrap-datepicker.min.css" rel="stylesheet">
+
+    <script src="lib/bootstrap-datepicker.min.js" type="text/javascript"></script>
+
+    <script src="lib/bootstrap-datepicker.tr.min.js" type="text/javascript"></script>
+
+
+
+    <!-- DATETIMEPICKER -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" type="text/javascript" charset="UTF-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment-with-locales.min.js" type="text/javascript" charset="UTF-8"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js" type="text/javascript" charset="UTF-8"></script>
+
+
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" rel="stylesheet">
+
+
+
+
+
+    <!-- for iban mask-->
+
+    <script type="text/javascript" src="lib/jquery.mask.min.js"></script>
+
+    <!-- for dialog -->
+
+    <link rel="stylesheet" href="lib/bootstrap-dialog.min.css" />
+
+    <script type="text/javascript" src="lib/bootstrap-dialog.min.js"></script>
+
+    <!-- For switch -->
+
+    <link rel="stylesheet" href="lib/toggles.min.css" />
+
+    <!-- For sweet modal alert -->
+
+    <link rel="stylesheet" href="https://cdn.modaselvim.net/swmodal/jquery.sweet-modal.min.css" />
+
+    <script src="https://cdn.modaselvim.net/swmodal/jquery.sweet-modal.min.js"></script>
+
+    <script type="text/javascript" src="lib/iban.js"></script>
+
+    <script type="text/javascript" src="lib/js.cookie.js"></script>
+
+    <script type="text/javascript" src="lib/jquery.serialize-object.min.js"></script>
+
+    <script type="text/javascript" src="lib/JsBarcode.code128.min.js"></script>
+
+    <script type="text/javascript" src="lib/jquery.trUpperCase2.js"></script>
+
+
+
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+
+
+
+
+    <!-- MY LOCAL FILES -->
+
+    <link rel="stylesheet" href="var/surec_24022018.css" />
+
+
+
+    <!--
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.11.2/af-2.2.2/b-1.4.2/b-colvis-1.4.2/b-html5-1.4.2/b-print-1.4.2/cr-1.4.1/fc-3.2.3/fh-3.1.3/kt-2.3.2/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/sl-1.2.3/datatables.min.css" />
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.11.2/af-2.2.2/b-1.4.2/b-colvis-1.4.2/b-html5-1.4.2/b-print-1.4.2/cr-1.4.1/fc-3.2.3/fh-3.1.3/kt-2.3.2/r-2.2.0/rg-1.0.2/rr-1.2.3/sc-1.4.3/sl-1.2.3/datatables.min.js"></script>
+  -->
+
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.11.2/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/cr-1.5.4/date-1.1.1/fc-3.3.3/fh-3.1.9/kt-2.6.4/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sb-1.2.1/sp-1.4.0/sl-1.3.3/datatables.min.css"/>
+
+
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs/jszip-2.5.0/dt-1.11.2/af-2.3.7/b-2.0.0/b-colvis-2.0.0/b-html5-2.0.0/b-print-2.0.0/cr-1.5.4/date-1.1.1/fc-3.3.3/fh-3.1.9/kt-2.6.4/r-2.2.9/rg-1.1.3/rr-1.2.8/sc-2.0.5/sb-1.2.1/sp-1.4.0/sl-1.3.3/datatables.min.js"></script>
+
+
+
+    <!-- <script src="https://kargokontrol.modaselvim.net:8282/socket.io/socket.io.js"></script> -->
+
+    <!-- <script>
+
+            $(function () {
+
+                var socket = io('https://kargokontrol.modaselvim.net:8282');
+
+                socket.on('surec', function(data){
+
+                    console.log(data);
+
+
+
+                });
+
+            });
+
+        </script>   -->
+
+
+
+
+
+
+
+    <script>
+
+        var ex_time = new Date(new Date().getTime() +  24 * 60 * 60 * 1000);//24 saat
+
+        Cookies.set("token", "a61f953047be98a1254b72693641259a", { expires: ex_time });
+
+
+
+        let token_order_note_giris =  "49ff516e61507b72d47e4c9391122393";
+
+    </script>
+
+
+
+    <style>.kpi_vis{display:none} .ms_vis{display:block}</style>
+
+
+
+    <script>
+
+        var domain_selvim = "https://www.modaselvim.com";
+
+        localStorage.setItem("user", "sumeyye.sahin@modaselvim.com");
+
+        localStorage.setItem("auths", '["33","1000","1003","1001","1002","9"]');
+
+        localStorage.setItem("tsoft_id", "1381");
+
+        localStorage.setItem("uchar", null);
+
+        localStorage.setItem("task_type", "6");
+
+        localStorage.setItem("ticket", "1");
+
+        localStorage.setItem("tokent", "48b9cbae4a6a809b45243c8254e632b8");
+
+        var tsoftrest =  domain_selvim + "/rest1/";
+
+        var tsoftresttoken = Cookies.get("token");
+
+
+
+        const node_secure_url = "https://kargokontrol.modaselvim.net:8484/api/v1";
+
+    </script>
+
+    <script>
+        let selectedOrders = "";
+
+        let kargoTable = "";
+
+        let url_set_order_note = 'https://api.reaktif.live/order2/setOrderNote';
+
+        let url_get_order_note = 'https://api.reaktif.live/order2/getOrderNote';
+
+        let token_order_note   = '49ff516e61507b72d47e4c9391122393';
+
+        // let url_set_order_note = 'https://www.modaselvim.com/rest1/order2/setOrderNote';
+
+        // let url_get_order_note = 'https://www.modaselvim.com/rest1/order2/getOrderNote';
+
+        // let token_order_note   = tsoftresttoken;
+
+
+
+        const username = localStorage.getItem("user");
+
+        const task_type = localStorage.getItem("task_type");
+
+
+
+        var mt_users = [];
+
+        var admin_users = [];
+
+        if (task_type == "5") mt_users.push(username);
+
+        if (task_type == "6") admin_users.push(username);
+
+
+
+    </script>
+
+
+
+    <script type="text/javascript" src="var/surec_exp_30.js"></script>
+
+
+
+</head>
+
+
+
+<body>
+
+<pre class="hide_this">
+
+
+	</pre>
+
+
+
+<div class="tamcerceve">
+
+    <!-- Ust Bar Menu -->
+
+    <div class="container col-sm-12" id="ustbar">
+
+        <nav class="navbar navbar-expand-lg navbar-pink">
+
+            <div class="container-fluid">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand " href="index.php?link=main"></a>
+
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+                        <i class="fa fa-bars"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse" id="myNavbar">
+
+                    <!-- MS görebileceği menü -->
+
+                    <ul class="nav navbar-nav ms_vis">
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                İade - Değişim İşlemler <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=siparis_duzenle">Sipariş Düzenle</a></li>
+
+                                <li><a href="?link=barkod">Barkod</a></li>
+
+                                <li><a href="?link=tsbul">Ürün-TS</a></li>
+
+                                <li><a href="?link=main">Raporlama (ikon sayfası) </a></li>
+
+                                <li><a href="?link=gelen">Gelen</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                İşlenmiş Siparişler <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=iade2">İade-Değişim-Belirsiz</a></li>
+
+                                <li><a href="?link=sth2">Stok Hatalılar</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                Çağrı Merkezi <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=yazisma">Yazışma</a></li>
+
+                                <li><a href="?link=yd_cagri">Yurtdışı Sipariş</a></li>
+
+                                <li><a href="?link=egitim_kalite">Eğitim Kalite</a></li>
+
+                                <li><a href="?link=supervizor">Süpervizor</a></li>
+
+                                <li><a href="?link=aranacaklar">Aranacaklar</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="?link=urunbildirim">Ürün Bildirim</a>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="?link=oncelikler">Öncelikler</a>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="?link=cc-duzenle">Kampanya Kodu</a>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="?link=sth">Stok Hatası</a>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                Kargolar <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=kargo">Kargo Grupları</a></li>
+
+                                <li><a href="?link=ktazmin">Kargo Tazmin</a></li>
+
+                                <li><a href="?link=hatali_cari">Hatalı Cari</a></li>
+
+                            </ul>
+
+                        </li>
+
+
+
+                        <li class = "active">
+
+                            <a href="?link=ticket">Ticket</a>
+
+                        </li>
+
+
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                Diğer
+
+                                <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=grafik">Grafik</a></li>
+
+                                <li><a href="?link=studio">Stüdyo</a></li>
+
+                                <li><a href="?link=demirbas">Demirbaş</a></li>
+
+                                <li><a href="?link=ticket">Ticket</a></li>
+
+                                <li><a href="?link=predit">Ürün Düzenle</a></li>
+
+                                <li><a href="?link=gelen">Gelen</a></li>
+
+                                <li><a href="?link=iade">İade</a></li>
+
+                                <li><a href="?link=degisim">Değişim</a></li>
+
+                                <li><a href="?link=spkontrol">Sipariş Kontrol</a></li>
+
+                                <li><a href="?link=cagri">Çağrı - Eski</a></li>
+
+                                <li><a href="?link=spedit">Sipariş Düzenle</a></li>
+
+                                <li><a href="?link=yakamoz">Yakamoz</a></li>
+
+                                <li><a href="?link=talep">Talep Değişim</a></li>
+
+                                <li><a href="?link=muhasebe">Gider Pusulası</a></li>
+
+                                <!-- <li><a href="?link=malkabul">Mal Kabul</a></li>-->
+
+                                <li><a href="?link=toptan">Toptan Siparişler</a></li>
+
+                                <li><a href="?link=depo">Depo</a></li>
+
+                                <li><a href="?link=zimmetsiz">Zimmetsiz Siparişler</a></li>
+
+                                <li><a href="?link=havuz">Havuz</a></li>
+
+                                <li><a href="?link=arsiv">Arşiv</a></li>
+
+                                <li><a href="?link=log">Log</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+                    <!-- KPI görebileceği menü -->
+
+                    <ul class="nav navbar-nav kpi_vis">
+
+
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                İşlenmiş Siparişler <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=iade2">İade-Değişim-Belirsiz</a></li>
+
+                                <li><a href="?link=sth2">Stok Hatalılar</a></li>
+
+                            </ul>
+
+                        </li>
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                Çağrı Merkezi <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=yazisma">Yazışma</a></li>
+
+                                <li><a href="?link=yd_cagri">Yurtdışı Sipariş</a></li>
+
+                                <li><a href="?link=egitim_kalite">Eğitim Kalite</a></li>
+
+                                <li><a href="?link=supervizor">Süpervizor</a></li>
+
+                                <li><a href="?link=aranacaklar">Aranacaklar</a></li>
+
+                            </ul>
+
+                        </li>
+
+
+
+                        <li class = "">
+
+                            <a href="" data-toggle="dropdown">
+
+                                Kargolar <span class="caret"></span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+                                <li><a href="?link=kargo">Kargo Grupları</a></li>
+
+                                <li class="ms_vis"><a href="?link=ktazmin" >Kargo Tazmin</a></li>
+
+                                <li><a href="?link=hatali_cari">Hatalı Cari</a></li>
+
+                            </ul>
+
+                        </li>
+
+                    </ul>
+
+
+
+                    <ul class="nav navbar-nav navbar-right ">
+
+                        <li>
+
+                            <a href="" data-toggle="dropdown">
+
+                                Sümeyye
+
+
+                                <span class="fa fa-user">
+
+										<span class="caret"></span>
+                                </span>
+
+                            </a>
+
+                            <ul class="dropdown-menu">
+
+
+                                <li><a href="cikis.php"><span class="fa fa-sign-out-alt"></span> Çıkış Yap</a></li>
+
+                            </ul>
+
+
+
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </nav>
+
+        <!--
+
+    <div class="span6 pull-right">
+
+        <span class="timer"></span>
+
+    </div>
+
+    -->
+
+    </div>
+
+    <!-- Bootstrap alert -->
+
+    <div class="container">
+
+        <div class="alert alert-danger hide_this" id="islem_alert_general">
+
+            <strong>Uyarı!</strong>
+
+            <span>Stok işlemlerinde sipariş süreci "İPTAL-2" olarak değiştirilmektedir, normal iptalden farklı olup stok değişikliği yapmayan bir süreçtir. Bu süreçteki siparişler normal "İptal" sürecine KESİNLİKLE ALINMAMALIDIR!</span>
+
+        </div>
+
+        <div class="alert alert-danger hide_this" id="islem_alert_general">
+
+            <strong>Uyarı!</strong>
+
+            <span>TSOFT tarafından birtakım güncellemeler yapılmaktadır. Yapılan işlemlerde dikkatli olunması gerekmektedir. </span>
+
+        </div>
+
+        <div class="alert" id="islem-alert" style="display: none">
+
+            <strong></strong>
+
+            <span></span>
+
+        </div>
+
+    </div>
+
+    <!-- Spinner icin -->
+
+    <div class="spinner_bg hide_this" id="spinner_bg"></div>
+
+    <div class="spinner hide_this" id="spinner"><i class="fa fa-spinner fa-3x fa-spin spin_renk"></i></div>
+
+    <!-- Icerik includes -->
+
+    <div class="content">
+
+
+
+        <p style="color: blue; font-weight:bold;" class="text-right"><button type="button" class="btn btn-sm btn-danger" onclick="$.arsivdenCikar();">TS-ARŞİVDEN-ÇIKAR</button> ID : 1381 </p>
+
+
+
+
+        <style>
+            /* Bunlar da ana butonların css leri */
+            .selected {
+                background-color: #ccc !important;
+            }
+
+            .mselected {
+                background-color: #33A8FF !important;
+            }
+
+            .btn_link_green {
+                color: #5cb85c !important;
+                font-weight: bold;
+                font-size: 18px;
+
+            }
+
+            .btn_link_orange {
+                color: #f0ad4e;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            .btn_link_blue {
+                color: #337ab7;
+                font-weight: bold;
+                font-size: 18px;
+            }
+
+            /* Burada ts birden fazla güncellediğinde arka planı ve yazı rengini kırmızı yaptık */
+            .bg_danger {
+                color: #a94442 !important;
+                background-color: #f2dede !important;
+                border-color: #ebccd1 !important;
+            }
+
+            /* Burada tablo içindeki tdleri ortalamak için global bir css tanımladık. */
+            #dv_ts_adina_kargo table tr td {
+                line-height: 40px !important;
+            }
+            .seperator {
+                border-right: 1px solid #333;
+                font-size: 16px;
+            }
+
+            .sweet-modal-content img{
+                width: 1080px;
+                object-fit : contain ;
+                height: auto;
+                top: 0;
+                margin: auto;
+            }
+        </style>
+
+        <!-- Ticket Projesi -->
+        <hr>
+        <h3 class="text-center">~ Ticket ~</h3>
+        <hr>
+        <div class="form-inline col-md-12">
+            <button type="button" class="btn btn-danger btn-sm" onclick="$.Ticket();"><span class="fa fa-plus"></span> Ticket </button>&nbsp;&nbsp;&nbsp;
+            <div class="input-group"> <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                <input class="form-control input-sm pltdate" id="ticket_baslangic_tarih" placeholder="Başlangıç..." type="text" autocomplete="off" required="">
+            </div>
+            <i class="fa fa-minus"></i>
+            <div class="input-group">
+                <input class="form-control input-sm pltdate" id="ticket_bitis_tarih" placeholder="Bitiş..." type="text" autocomplete="off" required=""> <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+            </div>&nbsp;&nbsp;&nbsp;
+            <button type="button" class="btn btn-sm btn-primary " onclick="$.TicketListe(0);"><span class="glyphicon glyphicon-list-alt"></span> Talepler </button>
+            <button type="button" class="btn btn-sm btn-success " onclick="$.TicketListe(1);"><span class="glyphicon glyphicon-list-alt"></span> Onaylanan Talepler</button>
+            <button type="button" class="btn btn-sm btn-danger " onclick="$.TicketListe(-1);"><span class="glyphicon glyphicon-list-alt"></span> Reddedilen Talepler</button>
+            <span class="input-group seperator">&nbsp;</span>&nbsp;
+            <button type="button" class="btn btn-sm btn-warning " onclick="if( ['1','6'].includes(localStorage.getItem('ticket'))){$.TicketListe(2);}else{alert('İzin verilmeyen alan!');}"><span class="glyphicon glyphicon-list-alt"></span> Geliştirme Talepleri</button>
+            <button type="button" class="btn btn-sm btn-success " onclick="$.TicketListe(3);"><span class="glyphicon glyphicon-list-alt"></span> Geliştirilmiş/Düzenlenmiş Talepler</button>
+            <button type="button" class="btn btn-sm btn-success " onclick="$.TicketListe(4);"><span class="glyphicon glyphicon-list-alt"></span> Tümü </button>
+
+            <button type="button" class="btn btn-sm btn-primary " onclick="$.TicketRapor();"><span class="glyphicon glyphicon-list-alt"></span> RAPOR </button>
+        </div>
+        <br>
+        <br><br>
+        <div id="dv_ticket_adina"></div>
+        <br>
+
+        <script>
+            tsoft_token     = token;
+            const tsoft_id  = localStorage.getItem("tsoft_id");
+            const ticket  = localStorage.getItem("ticket");
+
+            // const node_url      = "http://node.modaselvim.net:4554/api/v1";
+            const node_url = 'https://kargokontrol.modaselvim.net:8484/api/v1';
+
+            const process_code = "TY1";
+            var list_data = [];
+            var yazilim_adminler = [
+                "Osman Sekman",
+                "Kazım Erdoğan",
+                "Görkem Çetinci",
+                "Tuğba Kaç",
+            ];
+
+
+            $("#baslangic").focusin(function () {
+                $(this).datepicker({
+                    format: "yyyy-mm-dd",
+                    todayHighlight: true,
+                    autoclose: true,
+                    language: "tr",
+                    todayBtn: "linked",
+                });
+            });
+
+            $("#bitis").focusin(function () {
+                $(this).datepicker({
+                    format: "yyyy-mm-dd",
+                    todayHighlight: true,
+                    autoclose: true,
+                    language: "tr",
+                    todayBtn: "linked",
+                });
+            });
+
+            $(document).ready(function(){
+                var res= "";
+                $("#ticket_baslangic_tarih").focusin(function () {
+                    $(this).datepicker({
+                        format: "yyyy-mm-dd",
+                        todayHighlight: true,
+                        autoclose: true,
+                        language: "tr",
+                        todayBtn: "linked",
+                    });
+                });
+                $("#ticket_bitis_tarih").focusin(function () {
+                    $(this).datepicker({
+                        format: "yyyy-mm-dd",
+                        todayHighlight: true,
+                        autoclose: true,
+                        language: "tr",
+                        todayBtn: "linked",
+                    });
+                });
+
+                const yazilim = [
+                    { "name": "Tsoft-Nebim Entegrasyonu (Sipariş Düşmeme, Ürün Güncellenmeme vs..)", "id": 1 },
+                    { "name": "Sipariş İşlemleri (tedarik, iade, değişim, çek vs..)", "id": 2 },
+                    { "name": "Tsoft-Kargo Entegrasyonu Hata Bildirimi", "id": 3 },
+                    { "name": "Kayıtlı İşlem Düzeltme Talebi ", "id": 4 },
+                    { "name": "Hasarlıdan Çıkar", "id": 4 },
+                    { "name": "Faturalaşmamış", "id": 4 },
+                    { "name": "Bayraksız", "id": 4 },
+                    { "name": "Depo Sipariş İşlemleri (Tekne, petek, fatura vs..)", "id": 5 },
+                    { "name": "Yazılım Hata Bildirimi", "id": 6 },
+                    { "name": "Yazılım Güncelleme Talebi", "id": 7 },
+                    { "name": "Yazılım Geliştirme Talebi", "id": 8 },
+                ];
+
+                const teknik = [
+                    { "name": "Bilgisayar Sorunları", "id": 1 },
+                    { "name": "İnternet Bağlantı Sorunu", "id": 2 },
+                    { "name": "Cihaz Sorunları (Local, printer, kulaklık vs.. )", "id": 3},
+                    { "name": "Program Sorunları (Third-party Photoshop vb. uygulamalar)", "id": 4 },
+                    { "name": "Eksik Ekipman", "id": 5 },
+
+                ];
+
+                const tsoft_destek = [
+                    { "name": "T-Soft Sistemsel Yavaşlık", "id": 1 },
+                    { "name": "T-Soft Kampanya Sorunları", "id": 2 },
+                    { "name": "T-Soft Diğer Sorunlar", "id": 3 },
+                    { "name": "Kullanıcı İşlemleri", "id": 4 },
+                    { "name": "Test Siparişleri", "id": 5 },
+
+                ];
+
+                const malzeme_tedarik = [
+                    { "name": "Depo Malzemesi", "id": 1 },
+                    { "name": "Genel Malzeme", "id": 2 },
+                ];
+
+                const tamir_bakim = [
+                    { "name": "Su Tesisatı Arızaları", "id": 1 },
+                    { "name": "Elektrik Tesisatı Arızaları", "id": 2 },
+                ];
+                const depo_yonetim = [
+                    { "name": "Stok İşlemleri", "id": 1 },
+                ];
+                const depo_talep = [
+                    { "name": "Ürün Talep", "id": 1 },
+                ];
+                const fatura = [
+                    { "name": "Toptan Siparişler", "id": 1 },
+                    { "name": "Fatura İşlemleri", "id": 2 },
+                ];
+                const sablon = [
+                    { "name": "Alt Ürün / Beden Kontrolü", "id": 1 },
+                    { "name": "İlişkili Ürünler", "id": 2 },
+                    { "name": "Ürün Ölçü Tablosu", "id": 3 },
+                    { "name": "Filtre Ve Kategoriler", "id": 4 },
+                ];
+                const muhasebe = [
+                    { "name": "Fatura işlemleri", "id": 1 },
+                    { "name": "Stok işlemleri", "id": 2 },
+                    { "name": "Fiyat bilgileri", "id": 3 },
+                    { "name": "Kampanya süreci", "id": 4 },
+                    { "name": "Kategori", "id": 5 },
+                ];
+
+                const satin_alma = [
+                    { "name": "Tedarikçi Firmalar", "id": 1 },
+                    { "name": "Hasarlı Ürünler", "id": 2 },
+                    { "name": "Müşteri Talepleri", "id": 3 },
+                ];
+
+
+                const admin_departmans =[
+                    { name : "Yazılım", id:1, list : yazilim},
+                    { name : "Teknik", id:2, list : teknik},
+                    { name : "TSoft - Destek", id:3, list : tsoft_destek},
+                    { name : "Malzeme Tedarik", id:4, list : malzeme_tedarik},
+                    { name : "Tamir - Bakım", id:5, list : tamir_bakim},
+                    { name : "Depo Yönetim", id:6, list : depo_yonetim},
+                    { name : "Fatura", id:7, list : fatura},
+                    { name : "Şablon", id:8, list : sablon},
+                    { name : "Muhasebe", id:9, list : muhasebe},
+                    { name : "Satın Alma", id:10, list : satin_alma},
+                    { name : "Depo Talep", id:11, list : depo_talep},
+                ];
+
+                const user_departmants = [
+                    { name : "Grafik Stüdio", id:1},
+                    { name : "İade - Değişim", id:2},
+                    { name : "Depo", id:3},
+                    { name : "Muhasebe", id:4},
+                    { name : "Çağrı Merkezi", id:5},
+                    { name : "Pazarlama - Sosyal Medya", id:6},
+                    { name : "İnsan Kaynakları", id:7},
+                    { name : "Satın Alma", id:8},
+                    { name : "Raporlama", id:9},
+                    { name : "Stok Hatası", id:10},
+                    { name : "Yurt Dışı", id:11},
+                    { name : "Mal Kabul", id:12},
+                    { name : "Fatura", id:14},
+                    { name : "Diğer", id:13},
+
+                ];
+
+                const ticket_admin_tasks = ["8","9"];
+
+                var opts_admin_departmants = "";
+                for(i in admin_departmans){
+                    opts_admin_departmants += ` <option value="${admin_departmans[i].id}">${admin_departmans[i].name}</option> `;
+                }
+                var opts_user_departmants = "";
+                for(i in user_departmants){
+                    opts_user_departmants += ` <option value="${user_departmants[i].id}">${user_departmants[i].name}</option> `;
+                }
+
+                $.Ticket = function(){
+                    var btnOk= new Object();
+                    btnOk.label="Kaydet";
+                    btnOk.classes="blueB";
+                    btnOk.action=function(){
+                        var user_departman = $("#user_departman").val();
+                        var admin_departman = $("#admin_departman").val();
+                        var resim = $("#resim").val();
+                        var link = $("#link").val();
+                        var aciklama = $("#aciklama").val();
+                        var konu_baslik = $("#konu_baslik").val();
+
+                        var user_departman_desc = $("#user_departman option:selected").text();
+                        var admin_departman_desc = $("#admin_departman option:selected").text();
+                        var konu_baslik_desc = $("#konu_baslik option:selected").text();
+
+
+                        if(user_departman == "0"){
+                            $.sweetModal({ content: 'Bulunduğunuz departmanı seçmelisiniz!', icon: $.sweetModal.ICON_ERROR });
+                            return false;
+                        }else if(admin_departman  == "0"){
+                            $.sweetModal({ content: 'Talep ettiğiniz departmanı seçmelisiniz!', icon: $.sweetModal.ICON_ERROR });
+                            return false;
+                        }else if(konu_baslik  == "" || konu_baslik == "0"){
+                            $.sweetModal({ content: 'Konu başlığını seçmelisiniz!', icon: $.sweetModal.ICON_ERROR });
+                            return false;
+                        }else if(aciklama  == ""){
+                            $.sweetModal({ content: 'Açıklama yazmalısınız!', icon: $.sweetModal.ICON_ERROR });
+                            return false;
+                        }else{
+                            $.spinAktif();
+                            $.ajax({
+                                url:node_url + '/ticket/ticketEkle',
+                                type : "post",
+                                data:{
+                                    "token" : "xx_modaselvim_ticketEkle_xx",
+                                    "user_departman" : user_departman,
+                                    "admin_departman" : admin_departman,
+                                    "konu_baslik" :konu_baslik,
+                                    "user_departman_desc" : user_departman_desc,
+                                    "konu_baslik_desc" :konu_baslik_desc,
+                                    "admin_departman_desc" : admin_departman_desc,
+                                    "resim" : resim,
+                                    "link" : link,
+                                    "aciklama" : aciklama,
+                                    "username" : username,
+                                    "ticket" : ticket,
+                                },
+                                headers: {
+                                    "Accept" : "json"
+                                },
+                                dataType : "json",
+                                success : function(resp){
+                                    $.spinPasif();
+                                    if(resp.status == 200){
+                                        $.sweetModal({content:'Başarılı',icon: $.sweetModal.ICON_SUCCESS});
+                                    }else{
+                                        $.sweetModal(resp.message);
+                                    }
+                                },
+                                error : function(xhr){
+                                    $.spinPasif();
+                                    $.sweetModal("xhr hatası.."+xhr.responseText);
+                                }
+                            })//ajax
+                        }
+                    }//btnOk
+                    var btnCancel = new Object();
+                    btnCancel.label="İptal";
+                    btnCancel.classes="lightGreyB";
+                    btnCancel.action= function(){};
+
+                    var buttons = new Array();
+                    buttons.push(btnOk, btnCancel);
+
+                    var appText = `
+                <div class="form-group">
+                    <label for="user_departman">Bulunduğun Departman :</label>
+                    <select class="form-control" id="user_departman">
+                        <option value="0">Seçiniz..</option>
+                        ${opts_user_departmants}
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="admin_departman">Talep Ettiğin Departman :</label>
+                    <select class="form-control" id="admin_departman">
+                        <option value="0">Seçiniz..</option>
+                        ${opts_admin_departmants}
+                    </select>
+                </div>
+                <div id="alt_baslik"></div>
+                <div class="form-group">
+                    <label for="resim">Resim Ekle :</label>
+                    <input class="form-control" id="resim" placeholder="Link..." type="text" autocomplete="off" readonly />
+
+                    <form class="form-inline" action="" method="post" enctype="multipart/form-data" >
+                        <div class="form-group">
+                            <input type="hidden" id="token" name="token" value="xx_modaselvim_upload_image_to_bunny_cdn_xx">
+                            <input type="file" id="dosya" name="dosya" onchange="$.addImage()">
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="form-group">
+                    <label for="link">Link :</label>
+                    <input class="form-control" id="link" placeholder="Link..." type="text" autocomplete="off" required/>
+                </div>
+
+                <div class="form-group">
+                    <label for="aciklama">Açıklama :</label>
+                    <textarea class="form-control" id="aciklama" rows="3"></textarea>
+                </div>
+            `;
+                    var objModel = new Object();
+                    objModel.title = `<h3 style="color:red" font-weight: bold;>Ticket</h3>`;
+                    objModel.content = appText;
+                    objModel.blocking = true;
+                    objModel.width='60%';
+                    objModel.shoeCloseButton=false;
+                    objModel.buttons=buttons;
+                    $.sweetModal(objModel);
+
+                    $("#admin_departman").change(function() {
+                        var departman = $("#admin_departman").val();
+                        $("#alt_baslik").empty();
+
+                        let opts_alt_baslik = "";
+                        for(i in admin_departmans)
+                            if(admin_departmans[i].id == departman)
+                                for(j in admin_departmans[i].list)
+                                    opts_alt_baslik += ` <option value="${admin_departmans[i].list[j].id}">${admin_departmans[i].list[j].name}</option> `;
+
+
+                        var appText = `
+                    <div class="form-group">
+                        <label for="konu_baslik">Konu Başlık :</label>
+                        <select class="form-control" id="konu_baslik">
+                            <option value="0">Seçiniz..</option>
+                            ${opts_alt_baslik}
+                        </select>
+                    </div>
+                `;
+                        $("#alt_baslik").append(appText);
+
+                    })
+
+                }
+
+                $.TicketListe = function(list_type){
+
+                    var baslangic = $("#ticket_baslangic_tarih").val();
+                    var bitis = $("#ticket_bitis_tarih").val();
+                    var mtable = `
+                <table class="table table-striped table-hover" id="tbl_ticket_adina">
+                    <thead>
+                        <tr class="info">
+                            <th>Açıklama</th>
+                            <th>ID</th>
+                            <th>Kullanıcı</th>
+                            ${( [2,3,4].includes(list_type) )?`<th>Görevi Alan</th>`:''}
+                            <th>Kullanıcı Departman</th>
+                            <th>Talep Departmanı</th>
+                            <th>Konu Başlık</th>
+                            <th>Link</th>
+                            <th>Resim</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>Durum</th>
+                            <th>Onaylayan</th>
+                            <th>Onay Tarihi</th>
+                            <th>Son İşlem Tarihi</th>
+                            <th>Notlar</th>
+                            <th>İşlemler</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody id ="tbl_ticket_tbody"></tbody>
+                    <tfoot>
+                        <tr class="info">
+                            <th>Açıklama</th>
+                            <th>ID</th>
+                            <th>Kullanıcı</th>
+                            ${( [2,3,4].includes(list_type) )?`<th>Görevi Alan</th>`:''}
+                            <th>Kullanıcı Departman</th>
+                            <th>Talep Departmanı</th>
+                            <th>Konu Başlık</th>
+                            <th>Link</th>
+                            <th>Resim</th>
+                            <th>Oluşturma Tarihi</th>
+                            <th>Durum</th>
+                            <th>Onaylayan</th>
+                            <th>Onay Tarihi</th>
+                            <th>Son İşlem Tarihi</th>
+                            <th>Notlar</th>
+                            <th>İşlemler</th>
+                            <th>Link</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            `;
+                    $("#dv_ticket_adina").empty();
+                    $(mtable).appendTo("#dv_ticket_adina");
+
+
+                    $.spinAktif();
+                    if(( list_type != 2 && list_type != 101) && (baslangic == "" || bitis == "" ) ){
+                        $.spinPasif();
+                        $.sweetModal("Tarih Seçiniz");
+                    }else{
+                        $.ajax({
+                            url : node_url + '/ticket/ticketListesi',
+                            type : "post",
+                            data : {
+                                "token" : "xx_modaselvim_ticketListesi_xx",
+                                "baslangic" : baslangic,
+                                "bitis" : bitis,
+                                "list_type" : list_type,
+                                "ticket" : ticket,
+                                "username" : username,
+                            },
+                            success : function(resp){
+                                res = resp;
+                                if(resp.status == 200){
+                                    $.spinPasif();
+                                    var appText = "";
+
+                                    list_data = resp.data;
+
+                                    for(i in resp.data){
+                                        var obj = resp.data[i];
+
+                                        appText += `
+                                    <tr id="tck_satir_${obj.id}">
+                                        <td>${obj.aciklama} // ${obj.redAciklama}</td>
+                                        <td>${obj.id}</td>
+                                        <td>${obj.username}</td>
+                                        ${( [2,3,4].includes(list_type) )?`<td>${(obj.assigned_user==null)?'---':obj.assigned_user}</td>`:''}
+                                        <td>${obj.user_departman_desc}</td>
+                                        <td>${obj.admin_departman_desc}</td>
+                                        <td>${obj.konu_baslik_desc}</td>
+                                        <td>${(obj.link != null && obj.link != '')? `<a href="${obj.link}" target="_blank">Bak</a> `:''  }</td>
+                                        <td>
+                                            ${(obj.resim != null && obj.resim != '')? ` <span style="cursor:pointer; font-size:16px" class="fa fa-image" title="Resim" onclick="$.resimGoster('${obj.resim}')"> </span> `:'' }
+                                        </td>
+                                        <td>${$.timeToString(obj.insert_date)}</td>
+                                        <td>${
+                                            (obj.durum == -1)?'Reddedildi':
+                                                (obj.durum == 0)?'Beklemede':
+                                                    (obj.durum == 1)?'Onaylandı':
+                                                        (obj.durum == 2)?'Geliştirme Listesine Alındı':
+                                                            (obj.durum == 3)?'Ar-Ge Aşamasında':
+                                                                (obj.durum == 4)?'Yazılım Geliştiriliyor':
+                                                                    (obj.durum == 5)?'Geliştirme/Düzenleme Tamamlandı':'---'
+
+                                        }</td>
+                                        <td>${(obj.onaylayan == null || obj.onaylayan == "" )?obj.username:obj.onaylayan}</td>
+                                        <td>${  (obj.onay_tarih == null || obj.onay_tarih == "" || obj.onay_tarih == 0)?
+                                            (obj.update_date == 0 || obj.update_date == null || obj.update_date == "")?
+                                                $.timeToString(obj.insert_date)
+                                                :$.timeToString(obj.update_date)
+                                            :$.timeToString(obj.onay_tarih)}</td>
+                                        <td>${
+                                            (obj.update_date == 0 || obj.update_date == null || obj.update_date == "")? $.timeToString(obj.insert_date) :$.timeToString(obj.update_date)
+                                        }</td>
+                                        <td>
+                                            <button type="button" class="btn btn-sm btn-default" title="Notlar" onclick="$.getNotesLocal(${obj.id})"> <span class="fa fa-list-alt"></span> </button>
+                                            <button type="button" class="btn btn-sm btn-default" title="Ekle" onclick="$.addNoteLocal(${obj.id})"> <span class="fa fa-plus"></span> </button>
+                                        </td>
+                                        <td>
+                                            ${ ( list_type != 4 && ( (ticket == 1 && obj.durum > 0) || (ticket > 1 && obj.durum == 0) ) )? `<button type="button" class="btn btn-sm btn-warning" title="Güncelle" onclick="$.TicketGuncelle(${obj.id})"> <span class="fa fa-pen"></span> </button> `:'' }
+                                            ${ ( list_type != 4 && (ticket == 1 && obj.durum > 0))? `<button type="button" class="btn btn-sm btn-success" title="iş pasla" onclick="$.ticketPasla(${obj.id})"> <span class="fa fa-pen"></span> </button> `:'' }
+                                        </td>
+                                        <td>${(obj.link != null && obj.link != '')? `${obj.link}`:''}</td>
+                                    </tr>
+                                `;
+
+                                    } //for
+
+                                    $("#tbl_ticket_tbody").empty();
+                                    $("#tbl_ticket_tbody").append(appText);
+
+                                    let table_ops = {
+                                        language: {
+                                            url: "./../lib/dt_turkish_lang.json",
+                                            buttons: {
+                                                pageLength: {
+                                                    _: "Sayfada %d kayıt göster",
+                                                    "-1": "Tümünü göster"
+                                                },
+                                                selectAll: "Tümünü Seç",
+                                                selectNone: "Tümünü Kaldır"
+                                            },
+                                            select: {
+                                                rows: {
+                                                    _: "%d Satır seçildi.",
+                                                    0: "Seçmek için bir satıra tıklayın.",
+                                                    1: "1 Satır seçildi."
+                                                }
+                                            }
+                                        },
+                                        dom: "Bflrtip",
+                                        paging: true,
+                                        pageLength: 10,
+                                        select: false,
+                                        lengthMenu: [
+                                            [10, 25, 50, -1],
+                                            [10, 25, 50, "All"]
+                                        ],
+                                        order: [
+                                            [9, "asc"]
+                                        ],
+
+                                        buttons: [
+                                            {
+                                                extend: 'excelHtml5' ,
+                                                title: null,
+                                                filename: $("#ticket_baslangic_tarih").val() + ' ile ' + $("#ticket_bitis_tarih").val() + ' arası',
+                                                text: '<i class="fa fa-file-excel-o" style="color:green"></i>&nbsp; Çıktıla'
+                                            },
+                                        ],
+
+                                        initComplete: function () {
+                                            let filter_columns =[2,3,4,5,9,10];
+                                            if([2,3,4].includes(list_type)) filter_columns =[2,3,4,5,6,10,11];
+                                            this.api().columns(filter_columns).every(function () {
+                                                var column = this;
+                                                var select = $('<select><option value="">Tümü</option></select>').appendTo($(column.footer()).empty()).on('change', function () {
+                                                    var val = $.fn.dataTable.util.escapeRegex( $(this).val() );
+                                                    column.search(val ? '^' + val + '$' : '', true, false).draw();
+                                                });
+                                                column.data().unique().sort().each(function (d, j) {
+                                                    select.append('<option value="' + d + '">' + d.split("(")[0] + '</option>')
+                                                });
+                                            });
+                                        },
+
+                                    };
+                                    if([2,3,4].includes(list_type))
+                                        table_ops.columns = [
+                                            {visible:false},
+                                            null,null,null,null,
+                                            null,null,null,null,
+                                            null,null,null,null,
+                                            null,null,null,{visible:false},
+                                        ];
+                                    else
+                                        table_ops.columns = [
+                                            {visible:false},
+                                            null,null,null,null,
+                                            null,null,null,null,
+                                            null,null,null,null,
+                                            null,null,{visible:false},
+                                        ];
+
+
+
+                                    var t = $("#tbl_ticket_adina").DataTable(table_ops);
+
+
+
+                                    $('[data-toggle="tooltip"]').tooltip();
+
+                                    $("#tbl_ticket_tbody > tr").dblclick(function () {
+                                        if ($(this).hasClass("mselected") === false) {
+                                            $(this).addClass("mselected");
+                                        } else {
+                                            $(this).removeClass("mselected");
+                                        }
+                                    });
+
+                                }else{
+                                    $.spinPasif();
+                                    $.sweetModal("Kayıt Bulunamadı");
+                                }
+                            },
+                            error : function(xhr){
+                                alert(xhr.responseText);
+                            }
+                        })
+                    }
+                }
+                $.TicketRapor = function(){
+
+                    var baslangic = $("#ticket_baslangic_tarih").val();
+                    var bitis = $("#ticket_bitis_tarih").val();
+
+                    var mtable = `
+                <table class="table table-striped table-hover" id="tbl_ticket_adina">
+                    <thead>
+                        <tr class="info">
+                            <th>Kullanıcı</th>
+                            <th>Görevi Alan</th>
+                            <th>Kullanıcı Departman</th>
+                            <th>Talep Departmanı</th>
+                            <th>Konu Başlık</th>
+                            <th>Durum</th>
+                            <th>Tarih</th>
+                            <th>Adet</th>
+                        </tr>
+                    </thead>
+                    <tbody id ="tbl_ticket_tbody"></tbody>
+                    <tfoot>
+                        <tr class="info">
+                            <th>Kullanıcı</th>
+                            <th>Görevi Alan</th>
+                            <th>Kullanıcı Departman</th>
+                            <th>Talep Departmanı</th>
+                            <th>Konu Başlık</th>
+                            <th>Durum</th>
+                            <th>Tarih</th>
+                            <th>Adet</th>
+                        </tr>
+                    </tfoot>
+                </table>
+            `;
+                    $("#dv_ticket_adina").empty();
+                    $(mtable).appendTo("#dv_ticket_adina");
+                    $.spinAktif();
+                    if(baslangic == "" || bitis ==""){
+                        $.spinPasif();
+                        $.sweetModal("Tarih Seçiniz");
+                    }else{
+                        $.ajax({
+                            url : node_url + '/ticket/ticketRapor',
+                            type : "post",
+                            data : {
+                                "token" : "xx_modaselvim_ticketRapor_xx",
+                                "baslangic" : baslangic,
+                                "bitis" : bitis
+                            },
+                            success : function(resp){
+                                res = resp;
+                                if(resp.status == 200){
+                                    $.spinPasif();
+                                    var appText = "";
+
+                                    list_data = resp.data;
+
+                                    for(i in resp.data){
+                                        var obj = resp.data[i];
+
+                                        appText += `
+                                    <tr>
+                                        <td>${obj.username}</td>
+                                        <td>${(obj.assigned_user == null)?'':obj.assigned_user}</td>
+                                        <td>${obj.user_departman_desc}</td>
+                                        <td>${obj.admin_departman_desc}</td>
+                                        <td>${obj.konu_baslik_desc}</td>
+                                        <td>${
+                                            (obj.durum == -1)?'Reddedildi':
+                                                (obj.durum == 0)?'Beklemede':
+                                                    (obj.durum == 1)?'Onaylandı':
+                                                        (obj.durum == 2)?'Geliştirme Listesine Alındı':
+                                                            (obj.durum == 3)?'Ar-Ge Aşamasında':
+                                                                (obj.durum == 4)?'Yazılım Geliştiriliyor':
+                                                                    (obj.durum == 5)?'Geliştirme/Düzenleme Tamamlandı':'---'
+
+                                        }</td>
+                                        <td>${obj.tarih}</td>
+                                        <td>${obj.adet}</td>
+                                    </tr>
+                                `;
+
+                                    } //for
+
+                                    $("#tbl_ticket_tbody").empty();
+                                    $("#tbl_ticket_tbody").append(appText);
+
+
+                                    var t = $("#tbl_ticket_adina").DataTable({
+                                        language: {
+                                            url: "./../lib/dt_turkish_lang.json",
+                                            buttons: {
+                                                pageLength: {
+                                                    _: "Sayfada %d kayıt göster",
+                                                    "-1": "Tümünü göster"
+                                                },
+                                                selectAll: "Tümünü Seç",
+                                                selectNone: "Tümünü Kaldır"
+                                            },
+                                            select: {
+                                                rows: {
+                                                    _: "%d Satır seçildi.",
+                                                    0: "Seçmek için bir satıra tıklayın.",
+                                                    1: "1 Satır seçildi."
+                                                }
+                                            }
+                                        },
+                                        dom: "Bflrtip",
+                                        paging: true,
+                                        pageLength: 10,
+                                        select: true,
+                                        lengthMenu: [
+                                            [10, 25, 50, -1],
+                                            [10, 25, 50, "All"]
+                                        ],
+                                        order: [
+                                            [6, "asc"]
+                                        ],
+                                        buttons: [
+                                            {
+                                                extend: 'excel' ,
+                                                title: $("#baslar").val() + ' ile ' + $("#biter").val() + ' arası',
+                                                text: '<i class="fa fa-file-excel-o" style="color:green"></i>&nbsp; Çıktıla'
+                                            },
+                                        ],
+
+                                        initComplete: function () {
+                                            let filter_columns =[0,1,2,3,4,5,6];
+                                            this.api().columns(filter_columns).every(function () {
+                                                var column = this;
+                                                var select = $('<select><option value="">Tümü</option></select>').appendTo($(column.footer()).empty()).on('change', function () {
+                                                    var val = $.fn.dataTable.util.escapeRegex(
+                                                        $(this).val()
+                                                    );
+                                                    column
+                                                        .search(val ? '^' + val + '$' : '', true, false)
+                                                        .draw();
+                                                });
+                                                column.data().unique().sort().each(function (d, j) {
+                                                    select.append('<option value="' + d + '">' + d + '</option>')
+                                                });
+                                            });
+                                        },
+                                        footerCallback: function(row, data, start, end, display) {
+                                            var api = this.api(),
+                                                data;
+
+                                            // Remove the formatting to get integer data for summation
+                                            var intVal = function(i) {
+                                                return typeof i === 'string' ?
+                                                    i.replace(/[\$,]/g, '') * 1 :
+                                                    typeof i === 'number' ?
+                                                        i : 0;
+                                            };
+                                            // Total over this page
+                                            pageTotal = api
+                                                .column(7, {  search: 'applied', page: 'all' })
+                                                .data()
+                                                .reduce(function(a, b) { return intVal(a) + intVal(b); }, 0);
+
+                                            $(api.column(7).footer()).html( 'Toplam : ' + pageTotal );
+
+                                            // Update footer
+                                            //alert(toplam);
+                                        }
+
+                                    })
+
+
+                                    $('[data-toggle="tooltip"]').tooltip();
+
+                                }else{
+                                    $.spinPasif();
+                                    $.sweetModal("Kayıt Bulunamadı");
+                                }
+                            },
+                            error : function(xhr){
+                                alert(xhr.responseText);
+                            }
+                        })
+                    }
+                }
+
+                $.resimGoster = function(link) {
+                    $.sweetModal({
+                        title: "Hata Resmi",
+                        content: `<img src = "${link}"> `,
+                        width: '80%'
+
+                    });
+                }
+                $.TicketGuncelle = function(id){
+                    var btnOK = new Object();
+                    btnOK.label = 'Kaydet';
+                    btnOK.classes = 'greenB';
+                    btnOK.action = function() {
+
+                        var ticket_guncelle = $("#ticket_guncelle").val();
+                        var red_aciklama = $("#red_aciklama").val();
+                        var assigned_user = $("#assigned_user").val();
+
+
+                        let mdata = { "token": "xx_modaselvim_ticketGuncelle_xx", "id" : id, "durum" : ticket_guncelle, "username" : username, "redAciklama" : red_aciklama };
+
+                        if(assigned_user != "0") mdata.assigned_user = assigned_user;
+
+                        if(ticket_guncelle == "0"){
+                            $.sweetModal("Seçim Yapınız!");
+                            return false;
+                        }else if(ticket_guncelle == "99"){
+                            $.sweetModal("Yetki Sorunu!");
+                            return false;
+                        }else if(ticket_guncelle == "-1" && red_aciklama == ""){
+                            $.sweetModal("Reddedilme nedenini belirtmelisiniz!");
+                            return false;
+                        }else{
+                            $.spinAktif();
+                            $.ajax({
+                                url: node_url + '/ticket/ticketGuncelle',
+                                type: 'post',
+                                data: mdata,
+                                headers: {
+                                    'Accept': 'json'
+                                },
+                                dataType: 'json',
+                                success: function(resp) {
+                                    $.spinPasif();
+                                    if(resp.status == 200){
+
+                                        $("#tck_satir_"+id).addClass("hide_this");
+
+                                        if(typeof red_aciklama === "undefined" ) $.sweetModal({ content: 'Başarılı', icon: $.sweetModal.ICON_SUCCESS });
+                                        else
+                                            $.ajax({
+                                                url: node_secure_url+"/note/set",
+                                                type: 'post',
+                                                data: {
+                                                    "token": "xx_modaselvim_setNote_xx",
+                                                    "ref_number": id,
+                                                    "username": username,
+                                                    "note": red_aciklama,
+                                                    "note_type": 1,
+                                                    "process_code":process_code
+
+                                                },
+                                                headers: {
+                                                    'Accept': 'json'
+                                                },
+                                                dataType: 'json',
+                                                success: function (resp) {
+                                                    $.spinPasif();
+                                                    if(resp.status == 200){
+                                                        $.sweetModal({ content: 'Başarılı', icon: $.sweetModal.ICON_SUCCESS });
+                                                    }
+                                                },//success
+                                                error: function(xhr){
+                                                    $.spinPasif();
+                                                    $.sweetModal("xhr hatası.."+xhr.responseText);
+                                                }
+                                            });
+
+                                    }else{
+                                        $.sweetModal(resp.message);
+                                    }
+                                }, //success
+                                error: function(xhr) {
+                                    $.sweetModal("xhr hatası.." + xhr.responseText);
+                                }
+                            });
+                        }
+                    };
+
+                    var btnCansel = new Object();
+                    btnCansel.label = 'İptal';
+                    btnCansel.classes = 'lightGreyB';
+                    btnCansel.action = function() {};
+
+                    var buttons = new Array();
+                    buttons.push(btnOK, btnCansel);
+
+                    var objModel = new Object();
+                    objModel.title = 'Güncelleme !';
+
+
+                    /*
+
+                    (obj.durum == -1)?'Reddedildi':
+                                                (obj.durum == 0)?'Beklemede':
+                                                (obj.durum == 1)?'Onaylandı':
+                                                (obj.durum == 2)?'Geliştirme Listesine Alındı':
+                                                (obj.durum == 3)?'Ar-Ge Aşamasında':
+                                                (obj.durum == 4)?'Yazılım Geliştiriliyor':
+                                                (obj.durum == 5)?'Geliştirme Tamamlandı':'---'
+
+                    */
+                    if(ticket > 1){
+                        objModel.content = `
+                    <div class="form-group" id="dv_ticket_guncelle">
+                        <label for = "ticket_guncelle">Durum :</label>
+                        <select class="form-control" id="ticket_guncelle">
+                            <option value="0">Seçiniz..</option>
+                            <option value="1">Onayla</option>
+                            <option value="-1">Reddet</option>
+                        </select>
+                        <div class="form-group" id="dv_ticket_note"></div>
+                    </div>
+            `;
+                    }else if(ticket == 1){
+
+
+                        var str = "";
+                        for(i in yazilim_adminler) str +=`<option value="${yazilim_adminler[i]}">${yazilim_adminler[i]}</option>`;
+
+
+                        objModel.content = `
+                    <div class="form-group">
+                        <label for = "ticket_guncelle">Durum :</label>
+                        <select class="form-control" id="ticket_guncelle">
+                            <option value="0">Seçiniz..</option>
+                            <option value="2">Geliştirme Listesine Al</option>
+                            <option value="3">Ar-Ge Listesine Al</option>
+                            <option value="4">Yazılım Geliştiriliyor</option>
+                            <option value="5">Geliştirme/Düzenleme Tamamlandı</option>
+                            <option value="-1">Reddet</option>
+                        </select>
+                        <div class="form-group" id="dv_ticket_note"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for = "assigned_user">Admin :</label>
+                        <select class="form-control" id="assigned_user">
+                            <option value="0">Seçiniz..</option>
+                            ${str}
+                        </select>
+                    </div>
+            `;
+
+
+                    }
+
+
+                    objModel.blocking = true;
+                    objModel.width = '50%';
+                    objModel.showCloseButton = false;
+                    objModel.buttons = buttons;
+                    $.sweetModal(objModel);
+
+                    $("#ticket_guncelle").change(function(){
+                        if($(this).val() == "-1"){
+                            var appText = `
+                        <div class="form-group">
+                        <label for="red_aciklama">Not :</label>
+                        <textarea class="form-control" id="red_aciklama" rows="3"></textarea>
+                        </div>
+                    `;
+
+                            $("#dv_ticket_note").append(appText);
+                        }else{
+                            $("#dv_ticket_note").empty();
+                        }
+                    });
+
+
+                }
+                $.ticketPasla =  function(id){
+                    var btnOK = new Object();
+                    btnOK.label = 'Kaydet';
+                    btnOK.classes = 'greenB';
+                    btnOK.action = async function() {
+                        var assigned_user = $("#assigned_user").val();
+
+                        if(assigned_user == "0"){
+                            $.sweetModal("Seçim Yapınız!");
+                            return false;
+                        }else{
+                            $.spinAktif();
+
+                            let  url = node_url + '/ticket/ticketGuncelle';
+                            let headers = { 'Content-Type':'application/json' }
+                            let params 	= { "token":"xx_modaselvim_ticketGuncelle_xx", "id": id, "assigned_user":assigned_user  };
+                            let resp 	= await fetch(url, { method:'POST', headers: headers, body: JSON.stringify(params)  }).then(r =>  r.json());
+
+                            $("#tck_satir_"+id).addClass("hide_this");
+
+                            $.sweetModal(resp.message);
+
+                            $.spinPasif();
+
+                        }
+                    };
+
+                    var btnCansel = new Object();
+                    btnCansel.label = 'İptal';
+                    btnCansel.classes = 'lightGreyB';
+                    btnCansel.action = function() {};
+
+                    var buttons = new Array();
+                    buttons.push(btnOK, btnCansel);
+
+                    var str = "";
+                    for(i in yazilim_adminler) str +=`<option value="${yazilim_adminler[i]}">${yazilim_adminler[i]}</option>`;
+
+                    var objModel = new Object();
+                    objModel.title = 'Güncelleme !';
+                    objModel.content = `
+                    <div class="form-group">
+                        <select class="form-control" id="assigned_user">
+                            <option value="0">Seçiniz..</option>
+                            ${str}
+                        </select>
+                        <div class="form-group" id="dv_ticket_note"></div>
+                    </div>
+            `;
+
+                    objModel.blocking = true;
+                    objModel.width = '50%';
+                    objModel.showCloseButton = false;
+                    objModel.buttons = buttons;
+                    $.sweetModal(objModel);
+
+                }
+                $.addNoteLocal=function(ref_number){
+                    var btnOK = new Object();
+                    btnOK.label = 'Gönder';
+                    btnOK.classes = 'blueB';
+                    btnOK.action = function () {
+                        /*
+                            {
+                                "token": "xx_modaselvim_getNotes_xx",
+                                "ref_number": "TS309932969490",
+                                "username": "berfin.akgun",
+                                "note": "Müşteri tarihte 07.02.2022 şubeden teslimat alacaktır.",
+                                "note_type": 1,
+                                "process_code":"CM1"
+
+                            }
+                        */
+                        var aciklama = $("#aciklama").val();
+                        $.ajax({
+                            url: node_secure_url+"/note/set",
+                            type: 'post',
+                            data: {
+                                "token": "xx_modaselvim_setNote_xx",
+                                "ref_number": ref_number,
+                                "username": username,
+                                "note": aciklama,
+                                "note_type": 1,
+                                "process_code":process_code
+
+                            },
+                            headers: {
+                                'Accept': 'json'
+                            },
+                            dataType: 'json',
+                            success: function (resp) {
+                                $.spinPasif();
+                                if(resp.status == 200){
+                                    $.sweetModal({ content: 'Başarılı', icon: $.sweetModal.ICON_SUCCESS });
+                                }
+                            },//success
+                            error: function(xhr){
+                                $.spinPasif();
+                                $.sweetModal("xhr hatası.."+xhr.responseText);
+                            }
+                        });
+                    }
+                    var btnCancel = new Object();
+                    btnCancel.label = 'İptal';
+                    btnCancel.classes = 'lightGreyB';
+                    btnCancel.action = function () {};
+
+                    var buttons = new Array();
+                    buttons.push(btnOK, btnCancel);
+                    //Burası bizim html sayfamız
+                    var appText = `
+                <div class="form-group">
+                <label for="aciklama">Not :</label>
+                <textarea class="form-control" id="aciklama" rows="3"></textarea>
+                </div>
+            `;
+
+                    var objModel = new Object();
+                    objModel.title = "Not Bildir";
+                    objModel.content = appText;
+                    objModel.blocking = true;//arka sayfayı disabled yapıyor
+                    objModel.width = '60%';
+                    objModel.showCloseButton = false;
+                    objModel.buttons = buttons;
+                    $.sweetModal(objModel);
+                }
+
+                $.getNotesLocal = function(ref_number){
+
+                    $.spinAktif();
+                    $.ajax({
+                        url: node_secure_url+"/note/get",
+                        type: 'post',
+                        data: {
+                            "token":"xx_modaselvim_getNotes_xx",
+                            "process_code":process_code,
+                            "ref_number":ref_number
+                        },
+                        headers: {
+                            'Accept': 'json'
+                        },
+                        dataType: 'json',
+                        success: function (resp) {
+                            $.spinPasif();
+                            if(resp.status == 200){
+                                var tb1 = `
+                        <p style="text-align:left">Kullanıcı Notları</p>
+                        <table class="table table-striped table-hover table-bordered tbl_notes" style="font-size:12px;float:left; text-align:left">
+                        <thead>
+                            <tr style="background-color:#ccc">
+                            <th class ="col-md-2">Ekleyen</th>
+                            <th class ="col-md-10">Not</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        `;
+
+                                var tb2 = `
+                        <p style="text-align:left">Sistem Logları</p>
+                        <table class="table table-striped table-hover table-bordered tbl_notes" style="font-size:12px;float:left; text-align:left">
+                        <thead>
+                            <tr style="background-color:#ccc">
+                            <th class ="col-md-2">Ekleyen</th>
+                            <th class ="col-md-10">Not</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        `;
+                                //var appText ='<pre style="text-align : left; width:600px; overflow:auto">';
+                                let appText ='';
+                                let appText2 ='';
+                                let notes = resp.data;
+
+                                notes.sort(function(a, b){return Number(b.insert_date) - Number(a.insert_date)});
+
+                                for(i in notes){
+                                    let obj=notes[i];
+                                    if(obj.note_type == 1){
+                                        appText +=`
+                                <tr>
+                                    <td>${ obj.insert_date_str }<br>${obj.username}</td>
+                                    <td>${(obj.note).replaceAll("\n", "<br>")}</td>
+                                </tr>
+                                `;
+                                    }else{
+                                        appText2 +=`
+                                <tr>
+                                    <td>${ obj.insert_date_str }<br>${obj.username}</td>
+                                    <td>${(obj.note).replaceAll("\n", "<br>")}</td>
+                                </tr>
+                                `;
+                                    }
+                                }
+
+                                tb1 += appText + '</tbody></table>';
+                                tb2 += appText2 + '</tbody></table>';
+
+                                $.sweetModal(tb1+tb2);
+                            }else{
+                                $.sweetModal('Sipariş bulunamadı, arşivde olabilir. <br><br> Hata Mesajı : '+resp.message);
+                            }
+                        },//success
+                        error: function(xhr){
+                            $.spinPasif();
+                            $.sweetModal("xhr hatası.."+xhr.responseText);
+                        }
+                    });
+
+
+                }
+
+                $.addImage =  async function(){
+                    var input = document.querySelector('input[type="file"]')
+
+                    console.log(input.files[0].name);
+
+                    $.spinAktif()
+
+                    var data = new FormData()
+                    data.append('token', 'xx_modaselvim_upload_files_for_bunny_cdn_xx')
+                    data.append('process_code', 'tickets')
+                    data.append('dosya', input.files[0])
+
+                    let resp = await fetch(node_url+'/bunny/upload', {
+                        method: 'POST',
+                        body: data
+                    }).then(r => r.json());
+
+                    if(resp.status == 200) $("#resim").val(resp.img_url);
+
+                    $.spinPasif();
+
+                }
+                /*
+                $.aciklamaGoster =  async function(id){
+
+                    $.spinAktif()
+
+                    let  url = node_url + '/ticket/ticketGuncelle';
+                    let headers = { 'Content-Type':'application/json' }
+                    let params 	= { "token":"xx_modaselvim_ticketGuncelle_xx", "id": id, "seen_date":true  };
+                    let resp 	= await fetch(url, { method:'POST', headers: headers, body: JSON.stringify(params)  }).then(r =>  r.json());
+
+                    var str = "";
+                    if(resp.status == 200)
+                        for(i in list_data)
+                            if(list_data[i].id == id) str = list_data[i].aciklama;
+
+                    $.sweetModal(str);
+
+                    $.spinPasif();
+
+                }
+
+                */
+
+            })
+        </script>
+    </div>
+
+    <br><br><br>
+
+
+
+    <footer class="footer">
+
+        <div class="container col-sm-12 ">
+
+            <p class="text-muted">@Copyright 2017 - Modaselvim</p>
+
+        </div>
+
+    </footer>
+
+
+
+</div>
+
+</div>
+
+
+
+<style>
+
+    .highlight {
+
+        background-color: #bbb !important;
+
+    }
+
+
+
+    .selected {
+
+        background-color: #bbb !important;
+
+    }
+
+
+
+    .tbl_notes tr td {
+
+        padding: 2px 5px 2px 5px !important;
+
+    }
+
+
+
+    .sweet-modal-content {
+
+        padding: 32px 5px 5px 5px !important;
+
+    }
+
+
+
+    .container {
+
+        /* width:1320px !important */
+
+        width: 99.9% !important
+
+    }
+
+
+
+    .main_back_active{
+
+        color: #fff;
+
+        background-color: #456;
+
+    }
+
+
+
+    .sweet-modal-overlay {
+
+        overflow: scroll !important;
+
+    }
+
+    .sweet-modal-box{
+
+        max-height: unset !important;
+
+        height: unset !important;
+
+        top: 15% !important;
+
+        margin: auto !important;
+
+    }
+
+</style>
+
+<script>
+
+    //if(auths.includes(-1)) $("#myNavbar > ul").first().addClass("hide_this");
+
+    $.arsivdenCikar = function() {
+
+        var btnOK = new Object();
+
+        btnOK.label = 'Evet';
+
+        btnOK.classes = 'greenB';
+
+        btnOK.action = function() {
+
+            var ts_cikar = $("#ts_cikar").val();
+
+            if (ts_cikar == "") $.sweetModal("TS Giriniz..");
+
+            else {
+
+                $.spinAktif();
+
+                $.ajax({
+
+                    url: tsoftrest + 'order/unArchive',
+
+                    type: 'post',
+
+                    data: {
+
+                        "token": tsoftresttoken,
+
+                        "OrderCodes": ts_cikar
+
+                    },
+
+                    headers: {
+
+                        'Accept': 'json'
+
+                    },
+
+                    dataType: 'json',
+
+                    success: function(resp) {
+
+                        $.spinPasif();
+
+                        $.sweetModal(resp.message[0].text[0]);
+
+                    }, //success
+
+                    error: function(xhr) {
+
+                        $.spinPasif();
+
+                        $.sweetModal("xhr hatası.." + xhr.responseText);
+
+                    }
+
+                });
+
+            }
+
+        };
+
+        var btnCansel = new Object();
+
+        btnCansel.label = 'İptal';
+
+        btnCansel.classes = 'lightGreyB';
+
+        btnCansel.action = function() {};
+
+        var buttons = new Array();
+
+        buttons.push(btnOK, btnCansel);
+
+        var objModel = new Object();
+
+        objModel.title = 'ARŞİVDEN ÇIKARIM';
+
+        objModel.content = `
+
+					<div class="form-group">
+
+						<label for="eski">TS:</label>
+
+						<input type="text" id="ts_cikar" class="form-control tsmi" value="" placeholder="TS.." minlength="4">
+
+					</div>`;
+
+        objModel.blocking = true;
+
+        objModel.width = '50%';
+
+        objModel.showCloseButton = false;
+
+        objModel.buttons = buttons;
+
+        $.sweetModal(objModel);
+
+    }
+
+    $.topluArsivdenCikar = async function() {
+
+        let url 	= tsoftrest + 'order/unArchive';
+
+        let headers = { 'Content-Type':'application/x-www-form-urlencoded' }
+
+        let params 	= { "token" : tsoftresttoken, "OrderCodes" : selectedOrders};
+
+
+
+        if(selectedOrders.length == 0) $.sweetModal("Siparişler secilmedi!");
+
+        else
+
+            resp 	= await fetch(url, { method:'POST', headers: headers, body:  new URLSearchParams(params) }).then(r => r.json());
+
+
+
+    };
+
+    $.topluSurecGuncelle = async function(OrderStatusId) {
+
+        var orders = [];
+
+        if(selectedOrders.length > 0)
+
+            for(i in selectedOrders) orders.push({"OrderCode":selectedOrders[i] })
+
+        /*
+
+
+
+        [
+
+            { "OrderCode": "TS1703182" }
+
+        ]
+
+
+
+        */
+
+        let url 	= tsoftrest + 'order2/updateOrderStatusAs/'+OrderStatusId;
+
+        let headers = { 'Content-Type':'application/x-www-form-urlencoded' }
+
+        let params 	= { "token" : tsoftresttoken, "data" : JSON.stringify(orders)};
+
+
+
+        if(orders.length == 0) $.sweetModal("Siparişler secilmedi!");
+
+        else
+
+            resp 	= await fetch(url, { method:'POST', headers: headers, body:  new URLSearchParams(params) }).then(r => r.json());
+
+
+
+        var x = "";
+
+        for(i in resp.message)
+
+            x += `	<tr class="col-md-12">
+
+							<td class="col-md-6">${resp.message[i].id}</td>
+
+							<td class="col-md-6">${resp.message[i].text[0]}</td>
+
+						</tr>
+
+					`;
+
+
+
+        $.sweetModal(x)
+
+
+
+    };
+
+
+
+
+
+
+
+
+
+    // fetch ile istek yapma
+
+
+
+    /*
+
+
+
+        let url 	= "http://node.modaselvim.net:4554/api/v1/cagri/getGifts";
+
+        let headers = { 'Content-Type':'application/json' }
+
+        let params 	= { "token" : "xx_modaselvim_getGifts_xx", "baslangic" : baslangic, "bitis" : bitis, "inp_gift":$("#inp_gift").val() };
+
+
+
+        let resp 	= await fetch(url, { method:'POST', headers: headers, body: JSON.stringify(params) }).then(response => {return response.json()});
+
+
+
+
+
+
+
+
+
+    // axios ile istek yapma..
+
+    /*
+
+        <script src="https://unpkg.com/axios/dist/axios.min.js">.....
+
+        try {
+
+
+
+            $.spinAktif();
+
+
+
+            let url 	= "http://node.modaselvim.net:4554/api/v1/cagri/getGifts";
+
+            let headers = { 'Content-Type':'application/json' }
+
+            let params 	= { "token" : "xx_modaselvim_getGifts_xx", "baslangic" : baslangic, "bitis" : bitis };
+
+
+
+            let resp 	= await axios.post(url, params, { headers:headers } ).then(r => {return r.data});
+
+
+
+            $.spinPasif();
+
+
+
+            if(resp.status == 200){
+
+                //....
+
+            }else{
+
+                //....
+
+            }
+
+
+
+        } catch (error) {
+
+            $.spinPasif();
+
+            console.log(error);
+
+        }//catch
+
+    */
+
+
+
+    setInterval(function () {
+
+        $.ajax({
+
+            url: "./controller/action_controller.php",
+
+            type: "post",
+
+            data: {
+
+                refresh_session: true,
+
+            },
+
+            success: function (resp) {
+
+                //islem gerceklesince tutucuyu siliyoz
+
+                Cookies.set('token', resp.t_token, { expires: 1 });
+
+
+
+                if (resp.success === false) {
+
+                    console.log(resp);
+
+                    window.location.href = "./index.php";
+
+                }
+
+            }, //success
+
+            error: function (xhr) {
+
+                alert(xhr.responseText);
+
+            },
+
+        });
+
+    }, 15*60*1000); // 15 dk bir giriş kontrolü
+
+
+
+
+
+    /*
+
+
+
+        $.ajax({
+
+                url: './controller/action_controller.php',
+
+                type: 'post',
+
+                data: {
+
+                    "refresh_rest_session":true
+
+                },
+
+                success: function (resp) {
+
+                    if(resp.status == 200){
+
+                        var ex_time = new Date(new Date().getTime() +  2 * 60 * 60 * 1000);//2 saat
+
+                        Cookies.set('token', resp.token, { expires: ex_time });
+
+                    }else{
+
+                        $.loginToWs();
+
+                    }
+
+
+
+                },//success
+
+                error: function(xhr){
+
+                  alert(xhr.responseText);
+
+                }
+
+            });
+
+
+
+    */
+
+</script>
+
+
+
+
+
+
+
+
+
+<!-- <script type="text/javascript" src="var/kargo_group_34.js"></script> -->
+
+<!-- <script type="text/javascript" src="var/kargo_tazmin_22.js"></script> -->
+
+<!-- <script type="text/javascript" src="var/hatali_cari_08.js"></script> -->
+
+
+
+</body>
+
+
+
+</html>
